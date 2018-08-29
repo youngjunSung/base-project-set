@@ -66,6 +66,16 @@
   height: 300px;
 }
 
+.bxslider {
+  width: 100%;
+  li {
+    width: 300px;
+    height: 600px;
+    background-color: silver;
+    margin: 1rem 0;
+  }
+}
+
 // 레이어 배경
 .layer_popup {
   z-index: 100;

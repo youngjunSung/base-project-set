@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="assets/js/vender/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vender/jquery-migrate-1.2.1.min.js"></script>
+  <script src="assets/js/vender/slick.min.js"></script>
+  <script src="assets/js/vender/swiper.min.js"></script>
+  <script src="assets/js/vender/semantic.2.2.11.min.js"></script>
+  <script src="assets/js/vender/jquery.particleground.min.js"></script>
+  <script src="assets/js/vender/jquery.stellar.min.js"></script>
+  <script src="assets/js/pages/index.js"></script>
+  <link rel="stylesheet" href="assets/css/index.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="slick-slider">
+    <div>
+      <div class="inner_content">
+        <img src="assets/images/video_img_1.jpg" alt="">
+      </div>
+    </div>
+    <div>
+      <div class="inner_content">
+        <img src="assets/images/video_img_2.jpg" alt="">
+      </div>
+    </div>
+    <div>
+      <div class="inner_content">
+        <img src="assets/images/video_img_3.jpg" alt="">
+      </div>
+    </div>
+    <div>
+      <div class="inner_content">
+        <img src="assets/images/video_img_4.jpg" alt="">
+      </div>
+    </div>
+    <div>
+      <div class="inner_content">
+        <img src="assets/images/video_img_5.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="btn-area">
+    <button class="play">play</button>
+    <button class="stop">stop</button>
+  </div>
+  <script>
+      $(document).ready(function () {
+          var slider = $('.slick-slider').slick({
+              dots: true,
+              infinite: true,
+              autoplay: false,
+              autoplaySpeed: 100,
+              fade: true,
+              cssEase: 'linear'
+          });
+          var tmp_num = 0;
+          slider.mouseenter(function () {
+              tmp_num++;
+              if (tmp_num == 1) {
+                  $('.slick-slider')
+                      .slick('slickPlay');
+              }
+          });
+          slider.mouseleave(function () {
+              tmp_num--;
+              if (tmp_num == 0) {
+                  $('.slick-slider')
+                      .slick('slickPause');
+              }
+          });
+      });
+  </script>
+
+  <!-- Slider main container -->
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <script>
+      var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+
+          // If we need pagination
+          pagination: {
+              el: '.swiper-pagination',
+          },
+
+          // Navigation arrows
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+
+          // And if we need scrollbar
+          scrollbar: {
+              el: '.swiper-scrollbar',
+          },
+      })
+  </script>
+</div>
+</body>
+</html>

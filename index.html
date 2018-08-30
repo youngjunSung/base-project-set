@@ -10,16 +10,17 @@
   <script src="assets/js/vender/slick.min.js"></script>
   <script src="assets/js/vender/swiper.min.js"></script>
   <script src="assets/js/vender/bxslider.min.js"></script>
-  <script src="assets/js/vender/owl.carouse.min.js"></script>
+  <script src="assets/js/vender/owl.carousel.min.js"></script>
   <script src="assets/js/vender/semantic.2.2.11.min.js"></script>
   <script src="assets/js/vender/jquery.particleground.min.js"></script>
   <script src="assets/js/vender/jquery.stellar.min.js"></script>
-  <script src="assets/js/pages/index.js"></script>
+  <script src="assets/js/pages/script.js"></script>
   <link rel="stylesheet" href="assets/css/index.css"/>
 </head>
 <body>
 <div class="container">
-  <div class="slick-slider">
+  <!--slick-->
+  <div class="slick-test">
     <div>
       <div class="inner_content">
         <img src="assets/images/video_img_1.jpg" alt="">
@@ -50,77 +51,19 @@
     <button class="play">play</button>
     <button class="stop">stop</button>
   </div>
-  <script>
-      $(document).ready(function () {
-          var slider = $('.slick-slider').slick({
-              dots: true,
-              infinite: true,
-              autoplay: false,
-              autoplaySpeed: 100,
-              fade: true,
-              cssEase: 'linear'
-          });
-          var tmp_num = 0;
-          slider.mouseenter(function () {
-              tmp_num++;
-              if (tmp_num == 1) {
-                  $('.slick-slider')
-                      .slick('slickPlay');
-              }
-          });
-          slider.mouseleave(function () {
-              tmp_num--;
-              if (tmp_num == 0) {
-                  $('.slick-slider')
-                      .slick('slickPause');
-              }
-          });
-      });
-  </script>
-
-  <!-- Slider main container -->
+  <!--swiper-->
   <div class="swiper-container">
-    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-      <!-- Slides -->
       <div class="swiper-slide">Slide 1</div>
       <div class="swiper-slide">Slide 2</div>
       <div class="swiper-slide">Slide 3</div>
     </div>
-    <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
   </div>
-  <script>
-      var mySwiper = new Swiper ('.swiper-container', {
-          // Optional parameters
-          direction: 'horizontal',
-          loop: true,
-
-          // If we need pagination
-          pagination: {
-              el: '.swiper-pagination',
-          },
-
-          // Navigation arrows
-          navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-          },
-
-          // And if we need scrollbar
-          scrollbar: {
-              el: '.swiper-scrollbar',
-          },
-      })
-  </script>
-  
+  <!--bxslider-->
   <ul class="bxslider">
     <li>1</li>
     <li>2</li>
@@ -128,24 +71,24 @@
     <li>4</li>
     <li>5</li>
   </ul>
-  <script>
-      $(document).ready(function(){
-          $('.bxslider').bxSlider({
-              mode: 'horizontal',// 가로 방향 수평 슬라이드
-              speed: 500,        // 이동 속도를 설정
-              pager: false,      // 현재 위치 페이징 표시 여부 설정
-              moveSlides: 1,     // 슬라이드 이동시 개수
-              slideWidth: 1920,   // 슬라이드 너비
-              minSlides: 4,      // 최소 노출 개수
-              maxSlides: 4,      // 최대 노출 개수
-              slideMargin: 5,    // 슬라이드간의 간격
-              auto: true,        // 자동 실행 여부
-              controls: true,
-              infiniteLoop: true
-          });
-      });
-  </script>
-
+  <!--owl-carousel-->
+  <ul class="owl-carousel">
+    <li><img src="assets/images/s1.jpg" alt=""></li>
+    <li><img src="assets/images/s2.jpg" alt=""></li>
+    <li><img src="assets/images/s3.jpg" alt=""></li>
+    <li><img src="assets/images/s4.jpg" alt=""></li>
+    <li><img src="assets/images/s5.jpg" alt=""></li>
+    <li><img src="assets/images/s6.jpg" alt=""></li>
+  </ul>
+  <!--slick-->
+  <ul class="main-slide">
+    <li><img src="assets/images/s1.jpg" alt=""></li>
+    <li><img src="assets/images/s2.jpg" alt=""></li>
+    <li><img src="assets/images/s3.jpg" alt=""></li>
+    <li><img src="assets/images/s4.jpg" alt=""></li>
+    <li><img src="assets/images/s5.jpg" alt=""></li>
+    <li><img src="assets/images/s6.jpg" alt=""></li>
+  </ul>
 </div>
 </body>
 </html>

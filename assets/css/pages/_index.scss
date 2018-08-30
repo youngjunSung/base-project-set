@@ -42,7 +42,7 @@
 }
 
 .container {
-  .slick-slider {
+  .slick-test {
     width: 300px;
     margin: 0 auto;
     .slick-arrow {
@@ -59,20 +59,41 @@
     text-align: center;
     margin-top: 5rem;
   }
-}
+  .swiper-container {
+    width: 600px;
+    height: 300px;
+  }
+  .bx-viewport {
+    height: auto !important;
+  }
+  .bxslider {
+    width: 100%;
+    li {
+      width: 300px;
+      height: 600px;
+      background-color: silver;
+      margin: 1rem 0;
+    }
+  }
+  .owl-nav {
+    display: block !important;
+  }
 
-.swiper-container {
-  width: 600px;
-  height: 300px;
-}
-
-.bxslider {
-  width: 100%;
-  li {
-    width: 300px;
-    height: 600px;
-    background-color: silver;
-    margin: 1rem 0;
+  .slide-wrap {
+    width: 90%;
+    margin: 0 auto;
+    .slick-main {
+      width: 100%;
+      margin: 0 auto;
+      .slick-slide {
+        padding: 0 .6rem;
+      }
+      .slick-arrow {
+        &:before {
+          color: silver;
+        }
+      }
+    }
   }
 }
 

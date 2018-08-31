@@ -42,7 +42,7 @@ $(function () {
         scrollbar: {
             el: '.swiper-scrollbar',
         },
-    })
+    });
 
     $('.bxslider').bxSlider({
         mode: 'horizontal',// 가로 방향 수평 슬라이드

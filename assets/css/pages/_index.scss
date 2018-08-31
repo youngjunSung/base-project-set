@@ -59,10 +59,16 @@
     text-align: center;
     margin-top: 5rem;
   }
-  .swiper-container {
-    width: 600px;
-    height: 300px;
+
+  .swiper-main {
+    width: 100%;
   }
+
+  .swiper-sub {
+    width: 600px;
+    margin: 0 auto;
+  }
+
   .bx-viewport {
     height: auto !important;
   }

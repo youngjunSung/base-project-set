@@ -90,5 +90,66 @@
     <li><img src="assets/images/s6.jpg" alt=""></li>
   </ul>
 </div>
+<%--권한 선택 트리--%>
+<script src="/assets/js/vendor/tree-multiselect.min.js"></script>
+<div class="user-profile chk-author">
+  <h3 class="sub-title">
+    권한 선택
+  </h3>
+  <select id="author-select" multiple="multiple">
+    <%--회원관리 선택영역--%>
+    <option value="one" data-section="회원관리" selected="selected" data-index="3">회원목록</option>
+    <option value="two" data-section="회원관리/회원목록" selected="selected" data-index="1">회원정보수정</option>
+    <option value="two" data-section="회원관리/회원목록" selected="selected" data-index="1">회원정보수정</option>
+    <%--스타페이충전 선택영역--%>
+    <option value="three" data-section="스타페이충전">충전조회</option>
+    <option value="four" data-section="스타페이충전">환불내역</option>
+    <%--기프트카드 선택 영역--%>
+    <option value="wow" data-section="기프트카드">스타기프트카드</option>
+  </select>
+  <script>
+      $("#author-select").treeMultiselect({
+          allowBatchSelection: true,
+          collapsible: true,
+          hideSidePanel: true
+      });
+  </script>
+</div>
+<%--권한 선택 트리--%>
+<script src="/assets/js/vendor/jquery.ztree.all.min.js"></script>
+<script>
+    var zTreeObj;
+    var setting = {
+        check: {
+            enable: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+    var zNodes = [
+        {name:"회원관리", open:true, children:[
+                {name:"회원목록", open:true, children:[
+                        {name:"회원정보조회"}, {name:"회원정보수정"}]}
+                    ]},
+        {name:"스타페이충전", open:true, children:[
+                {name:"충전조회"}, {name:"환불내역"}]},
+        {name:"기프트카드", open:false, children:[
+                {name:"스타기프트카드"}]}
+    ];
+    $(document).ready(function(){
+        zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    });
+</script>
+<div class="user-profile chk-author">
+  <h3 class="sub-title">
+    권한 선택
+  </h3>
+  <div class="author-tree">
+    <ul id="treeDemo" class="ztree"></ul>
+  </div>
+</div>
 </body>
 </html>

@@ -175,37 +175,86 @@
     }
 }
 
-.page-wrap {
-    display: -webkit-box;
-    /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;
-    /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;
-    /* TWEENER - IE 10 */
-    display: -webkit-flex;
-    /* NEW - Chrome */
-    display: flex;
-    /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    display:-webkit-box;
-    display:-moz-box;
-    display:-ms-flexbox;
-    display:-webkit-flex;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction: column;
-    -webkit-align-items:center;
-    -webkit-justify-content:center;
-    -webkit-box-pack:center;
-    -webkit-box-align:center;
-    -moz-box-pack:center;
-    -moz-box-align:center;
-    -ms-box-pack:center;
-    -ms-box-align:center;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
-
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -moz-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
 
 .main-sidebar {
     -webkit-box-flex: 1;
@@ -218,6 +267,21 @@
     /* IE 10 */
     flex: 1;
     /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+//반응형 정사각형
+.note {
+  border: 1px solid red;
+  &:after { /* after로 반응형 정사각형 만들기 */
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+  .inner { /* 내부에 컨텐츠가 있을 때 추가 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .placeholder_color_change {
@@ -249,7 +313,7 @@
     color: #c6c6c6 !important;
     }
 }
-
+// 시멘틱ui 체크박스 커스텀
 .ui.checkbox {
     margin-top: 1rem;
     //체크박스 색상
@@ -273,6 +337,7 @@
       }
     }
 }
+// 테이블 tbody 에 스크롤 부여
 .add-scroll {
     border-collapse: collapse;
     width: 100%;
@@ -296,10 +361,10 @@
     tr {
       display: table;
       width: 100%;
+      td {
+        width: 100px;
+      }
     }
-  }
-  .add-scroll td {
-    width: 100px;
   }
   .add-scroll tfoot {
     float: left;
@@ -310,5 +375,19 @@
         width: 150px !important;
         border-top: 1px solid rgba(34, 36, 38, 0.1) !important;
       }
+    }
+  }
+// 시멘틱ui 드롭다운 크기 조정
+  .ui.dropdown.show-num {
+    min-height: 2em;
+    padding: 0.5em 1em;
+    min-width: 80px;
+    margin-left: 10px;
+    .dropdown.icon {
+      padding: 0.5em 1em;
+    }
+    .menu .item {
+      padding: 0.5em 1em !important;
+      font-size: 0.95rem;
     }
   }

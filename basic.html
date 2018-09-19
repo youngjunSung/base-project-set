@@ -1,43 +1,95 @@
 <!--HTML5 문서는 반드시 <!DOCTYPE html> 으로 시작하여 문서 형식을 HTML5으로 지정한다.-->
 <!DOCTYPE html>
-<html lang="en">
+<!--html은 글로벌 어트리뷰트를 지원한다. 특히 lang 어트리뷰트를 사용하는 경우가 많다.
+한국어를 주언어로 사용하는 경우의 예이다.-->
+<html lang="ko">
+<!--head 요소는 메타데이터를 포함하기 위한 요소이며 웹페이지에 하나만 존재한다.
+메타데이터는 HTML 문서의 title, style, link, script 에 대한 데이터로 화면에 비표시-->
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <meta charset="UTF-8"><!--브라우저가 사용할 문자셋-->
+  <meta name="keywords" content="html, css, xml, javascript"><!--검색엔진 최적화-->
+  <meta name="description" content="web tutorial"><!--웹페이지의 설명-->
+  <meta name="author" content="yj"><!--웹페이지 저자 표시-->
+  <meta http-equiv="refresh" content="30"><!--웹페이지 30초마다 리프레시-->
+  <title>Title</title><!--브라우터 탭에 표시되는 이름-->
+  <script src="assets/js/pages/index.js"></script>
+  <script>
+      document.addEventListener("click", function () {
+          alert();
+      });
+  </script>
+  <link rel="stylesheet" href="assets/css/index.css">
+  <style>
+    html, body {
+      background-color: silver;
+    }
+  </style>
 </head>
 <body>
-  <!--요소와 빈 요소-->
-  <!--HTML 요소는 시작 태그(start tag)와 종료 태그(end tag) 그리고
-  태그 사이에 위치한 content로 구성된다.-->
-  <!--빈 요소 (Empty Element)는 어트리뷰트(Attribute)만 가질 수 있다.-->
-  <!--대표적인 빈 요소 : br hr img input link meta-->
+<!--요소와 빈 요소-->
+<!--HTML 요소는 시작 태그(start tag)와 종료 태그(end tag) 그리고
+태그 사이에 위치한 content로 구성된다.-->
+<!--빈 요소 (Empty Element)는 어트리뷰트(Attribute)만 가질 수 있다.-->
+<!--대표적인 빈 요소 : br hr img input link meta-->
 
-  <!--어트리뷰트-->
-  <img src="html.jpg" width="104" height="142">
-  <!--어트리뷰트명 sre, width, height / 어트리뷰트값 html.jpg, 104, 142-->
+<!--어트리뷰트-->
+<img src="html.jpg" width="104" height="142">
+<!--어트리뷰트명 sre, width, height / 어트리뷰트값 html.jpg, 104, 142-->
 
-  <!--글로벌 어트리뷰트-->
-  <!--id	유일한 식별자(id)를 요소에 지정한다. 중복 지정이 불가하다.
-  class	스타일시트에 정의된 class를 요소에 지정한다. 중복 지정이 가능하다.
-  hidden	css의 hidden과는 다르게 의미상으로도 브라우저에 노출되지 않게 된다.
-  lang	지정된 요소의 언어를 지정한다. 검색엔진의 크롤링 시 웹페이지의 언어를 인식할 수 있게 한다.
-  style	요소에 인라인 스타일을 지정한다.
-  tabindex	사용자가 키보드로 페이지를 내비게이션 시 이동 순서를 지정한다.
-  title	요소에 관한 제목을 지정한다.-->
+<!--글로벌 어트리뷰트-->
+<!--id	유일한 식별자(id)를 요소에 지정한다. 중복 지정이 불가하다.
+class	스타일시트에 정의된 class를 요소에 지정한다. 중복 지정이 가능하다.
+hidden	css의 hidden과는 다르게 의미상으로도 브라우저에 노출되지 않게 된다.
+lang	지정된 요소의 언어를 지정한다. 검색엔진의 크롤링 시 웹페이지의 언어를 인식할 수 있게 한다.
+style	요소에 인라인 스타일을 지정한다.
+tabindex	사용자가 키보드로 페이지를 내비게이션 시 이동 순서를 지정한다.
+title	요소에 관한 제목을 지정한다.-->
 
-  <!--시멘틱 웹-->
-  <!--non-semantic 요소
-  div, span 등이 있으며 이들 태그는 content에 대하여 어떤 설명도 하지 않는다.
-  semantic 요소
-  form, table, img 등이 있으며 이들 태그는 content의 의미를 명확히 설명한다,-->
+<!--시멘틱 웹-->
+<!--non-semantic 요소
+div, span 등이 있으며 이들 태그는 content에 대하여 어떤 설명도 하지 않는다.
+semantic 요소
+form, table, img 등이 있으며 이들 태그는 content의 의미를 명확히 설명한다,-->
 
-  <!--다음은 HTML5에서 새롭게 추가된 시맨틱 태그이다.-->
-  <!--tag	Description
-  header	헤더를 의미한다
-  nav	내비게이션을 의미한다
-  aside	사이드에 위치하는 공간을 의미한다
-  section	본문의 여러 내용(article)을 포함하는 공간을 의미한다
-  article	분문의 주내용이 들어가는 공간을 의미한다
-  footer	푸터를 의미한다-->
+<!--다음은 HTML5에서 새롭게 추가된 시맨틱 태그이다.-->
+<!--tag	Description
+header	헤더를 의미한다
+nav	내비게이션을 의미한다
+aside	사이드에 위치하는 공간을 의미한다
+section	본문의 여러 내용(article)을 포함하는 공간을 의미한다
+article	분문의 주내용이 들어가는 공간을 의미한다
+footer	푸터를 의미한다-->
+
+<!--텍스트 관련 태그-->
+<h1>h1~h6 중요한 제목을 의미하는 태그</h1>
+<b>의미 없는 bold체</b>
+<strong>중요한 의미의 bold체</strong>
+<i>의미 없는 italic체</i>
+<em>강조하는 italic체</em>
+<small>small text 지정</small>
+<mark>형광펜 표시</mark>
+<del>취소선 표시</del>
+<ins>추가된 text 지정</ins>
+<sub>아래 쓰인 text</sub>
+<sup>위에 쓰인 text</sup>
+<p>본문에 쓰이는 text<q>인용문을 지정하는 q태그, 큰 따옴표로 감싼다</q></p>
+<hr>수평줄(빈요소)
+<pre>
+  형식화된 text를 지정한다. 태그 내 content는 작성된 그대로 표시된다.
+
+  var myArray = [];
+console.log(myArray.length); // 0
+
+myArray[1000] = true;  // [ , , ... , , true ]
+
+console.log(myArray.length); // 1001
+console.log(myArray[0]);     // undefined
+</pre>
+<blockquote>
+  인용문 블록을 지정. 해당 요소는 들여쓰기 된다.
+</blockquote>
+
+<!--링크-->
+
 </body>
 </html>

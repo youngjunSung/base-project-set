@@ -1,4 +1,3 @@
-<!--HTML5 문서는 반드시 <!DOCTYPE html> 으로 시작하여 문서 형식을 HTML5으로 지정한다.-->
 <!DOCTYPE html>
 <!--html은 글로벌 어트리뷰트를 지원한다. 특히 lang 어트리뷰트를 사용하는 경우가 많다.
 한국어를 주언어로 사용하는 경우의 예이다.-->
@@ -12,11 +11,11 @@
   <meta name="author" content="yj"><!--웹페이지 저자 표시-->
   <meta http-equiv="refresh" content="30"><!--웹페이지 30초마다 리프레시-->
   <title>Title</title><!--브라우터 탭에 표시되는 이름-->
-  <script src="assets/js/pages/index.js"></script>
+  <script src="/assets/js/pages/index.js"></script>
   <script>
-      document.addEventListener("click", function () {
-          alert();
-      });
+      // document.addEventListener("click", function () {
+      //     alert();
+      // });
   </script>
   <link rel="stylesheet" href="assets/css/index.css">
   <style>
@@ -206,5 +205,51 @@ console.log(myArray[0]);     // undefined
 <form action="" method="get">
 
 </form>
+
+
+
+<p>
+  <textarea id="code-js">
+var widgets = []
+function updateHints() {
+  editor.operation(function(){
+    for (var i = 0; i < widgets.length.; ++i)
+      editor.removeLineWidget(widgets[i]);
+    widgets.length = 0;
+
+    JSHINT(editor.getValue());
+    for (var i = 0; i < JSHINT.errors.length; ++i) {
+      var err = JSHINT.errors[i];
+      if (!err) continue;
+      var msg = document.createElement("div");
+      var icon = msg.appendChild(document.createElement("span"));
+      icon.innerHTML = "!!";
+      icon.className = "lint-error-icon";
+      msg.appendChild(document.createTextNode(err.reason));
+      msg.className = "lint-error";
+      widgets.push(editor.addLineWidget(err.line - 1, msg, {coverGutter: false, noHScroll: true}));
+    }
+  });
+  var info = editor.getScrollInfo();
+  var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
+  if (info.top + info.clientHeight < after)
+    editor.scrollTo(null, after - info.clientHeight + 3);
+}
+
+  </textarea>
+</p>
+
+<script src="assets/js/vender/codemirror.js"></script>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code-js"), {
+        lineNumbers: true,
+        mode: "javascript",
+        theme: "dracula",
+        gutters: ["CodeMirror-lint-markers"],
+        lint: true
+    });
+</script>
+
+
 </body>
 </html>

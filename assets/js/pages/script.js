@@ -1,5 +1,5 @@
 $(function () {
-    var slider = $('.slick-test').slick({
+    var slider = $('.slick-sliders').slick({
         dots: true,
         infinite: true,
         autoplay: false,

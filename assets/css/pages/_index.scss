@@ -41,29 +41,6 @@
   background-color: silver;
 }
 
-.event-container {
-  width: 900px;
-  margin: 0 auto;
-  .vote-event {
-    input {
-      display: none;
-    }
-    .vote-check {
-      background-image: url("../images/unchecked.png");
-      background-repeat: no-repeat;
-      background-position: right top;
-      display: inline-block;
-      img {
-        position: relative;
-        z-index: -1;
-      }
-    }
-    input[type="radio"]:checked + .vote-check {
-      background-image: url("../images/checked.png");
-    }
-  }
-}
-
 .container {
   .slick-test {
     width: 300px;

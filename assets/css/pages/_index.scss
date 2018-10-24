@@ -41,6 +41,10 @@
   background-color: silver;
 }
 
+.test-slide {
+  width: 800px;
+}
+
 .container {
   .slick-test {
     width: 300px;
@@ -60,8 +64,26 @@
     margin-top: 5rem;
   }
 
+  .slide-container {
+    li {
+      float: left;
+      width: 33.33%;
+    }
+    &:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+
+  .swiper-top-wrap {
+
+  }
   .swiper-main {
-    width: 100%;
+    width: 800px;
+    .swiper-slide {
+
+    }
   }
 
   .swiper-sub {

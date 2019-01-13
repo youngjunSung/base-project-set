@@ -141,6 +141,8 @@
     background: #f00;
     vertical-align: middle;
     padding: 1rem;
+    border: 10px blue solid;
+    outline: 10px solid yellow;
   }
   // 중앙으로 받쳐주는 가상 요소
   &:after {
@@ -260,4 +262,66 @@
   margin: 0 auto;
   background-color: silver;
 }
-
+@keyframes fillmode {
+  from {
+    transform: translateX(0);
+    background-color: black;
+    width: 20px;
+  }
+  to {
+    transform: translateX(150%);
+    background-color: silver;
+    height: 20px;
+  }
+}
+.ani-test {
+  li {
+    height: 100px;
+    div {
+      width: 100px;
+      height: 100px;
+      //animation: fillmode 1s 10s 3 ease-in alternate both;
+      animation-name: fillmode;
+      animation-duration: 1s;
+      animation-delay: 2s;
+      animation-timing-function: cubic-bezier(.17,.67,.79,-0.03); //애니메이션 속도 곡선 제어
+      animation-iteration-count: 2; //반복 횟수
+      animation-direction: normal; //0% 에서 100%가는 방향 정하는 속성, normarl은 0% -> 100% -> 0% -> 100% / alternate는 0 -> 100% -> 0%
+      animation-play-state: running; //정지, 재생 상태 설정
+      animation-fill-mode: none; //애니메이션의 실행 전후에 "속성 값" 적용 여부
+      color: #fff;
+    }
+    &:nth-of-type(1) {
+      div {
+        background-color: red;
+        animation-fill-mode: none;
+      }
+    }
+    &:nth-of-type(2) {
+      div {
+        background-color: green;
+        animation-fill-mode: forwards;
+      }
+    }
+    &:nth-of-type(3) {
+      div {
+        background-color: blue;
+        animation-fill-mode: backwards;
+      }
+    }
+    &:nth-of-type(4) {
+      div {
+        background-color: yellow;
+        animation-fill-mode: both;
+      }
+    }
+    &:nth-of-type(5) {
+      article {
+        width: 100px;
+        height: 100px;
+        background-color: #2bbbff;
+        animation: fillmode 1s; //최소 설정 옵션 : 애니메이션 이름, 지속시간
+      }
+    }
+  }
+}

@@ -28,11 +28,12 @@
   </div>
 </div>
 <script>
+    // 애니메이션이 끝나고 나면 발생하는 이벤트
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     function click_ani() {
-        $('.content').addClass('shake animated').one(animationEnd, function () {
-            $('.content').removeClass('shake animated');
+        $('.content').addClass('bounceInLeft animated').on(animationEnd, function () {
+            $('.content').removeClass('bounceInLeft animated');
         });
     }
 
@@ -42,6 +43,7 @@
         click_ani();
     });
     $('.layer_popup').click(function () {
+        // alert('이벤트 버블링');
         $(this).delay(500).fadeOut();
     });
 </script>

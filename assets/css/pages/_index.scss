@@ -46,46 +46,12 @@
 }
 
 .container {
-  .slick-test {
-    width: 300px;
-    margin: 0 auto;
-    .slick-arrow {
-      &:before {
-        color: silver;
-      }
-    }
-    div {
-      background-color: silver;
-      height: 300px;
-    }
-  }
-  .btn-area {
-    text-align: center;
-    margin-top: 5rem;
-  }
-
-  .slide-container {
-    li {
-      float: left;
-      width: 33.33%;
-    }
-    &:after {
-      display: block;
-      content: '';
-      clear: both;
-    }
-  }
-
-  .swiper-top-wrap {
-
-  }
   .swiper-main {
     width: 800px;
     .swiper-slide {
 
     }
   }
-
   .swiper-sub {
     width: 600px;
     margin: 0 auto;
@@ -108,8 +74,11 @@
   }
 
   .slide-wrap {
-    width: 90%;
+    width: 600px;
     margin: 0 auto;
+    @media all and (max-width: 600px) {
+      width: 100%;
+    }
     .slick-main {
       width: 100%;
       margin: 0 auto;
@@ -169,6 +138,12 @@
       background-color: #fff;
       border: 1px solid #3d4268;
       cursor: pointer;
+      background: {
+        image: url("../../../assets/images/partner/partners_bg_3.png");
+        position: center top;
+        repeat: no-repeat;
+        size: cover;
+      };
       // table 요소 추가
       div {
         display: table;

@@ -93,6 +93,24 @@
     const txt1 = 'sdfsdf';
     const txt2 = 'fshgsg';
     console.log(`template literal is ${txt1} ${txt2}`);
+
+    //객체
+    const person = {
+        name: '윤아준',
+        age: 19,
+        languages: ['Korean', 'English'],
+        data: {
+            a: 1,
+            b: 2
+        },
+        intro(){
+            // return 100;
+            this.data.a++;
+            return this.data.a;
+        }
+    };
+    // person.languages.length;
+    console.log(person.intro());
   </script>
 </head>
 <body>
